@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Images">
-      <UniqueIdentifier>{1e69c811-a103-401c-9e36-87e40600731f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -29,13 +26,5 @@
     <ClInclude Include="Session.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="M:\My Documents\images\svea.jpg">
-      <Filter>Images</Filter>
-    </Image>
-    <Image Include="M:\My Documents\images\trean.jpg">
-      <Filter>Images</Filter>
-    </Image>
   </ItemGroup>
 </Project>
