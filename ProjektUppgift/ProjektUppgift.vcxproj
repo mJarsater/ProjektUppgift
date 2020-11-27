@@ -145,6 +145,10 @@
   <ItemGroup>
     <ClInclude Include="Session.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="M:\My Documents\images\svea.jpg" />
+    <Image Include="M:\My Documents\images\trean.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
