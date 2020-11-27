@@ -12,9 +12,11 @@ namespace game
 		win = SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED,
 			SDL_WINDOWPOS_CENTERED, 650, 800, 0);
 		ren = SDL_CreateRenderer(win, -1, 0);
-		SDL_Surface* bgSurface = SDL_LoadBMP("C:/Users/elias/Documents/CPROG/ProjektUppgift_media/bg.bmp");
+		SDL_Surface* bgSurface = IMG_Load("C:/Users/elias/Documents/CPROG/ProjektUppgift_media/bg.png");
 		bgTex = SDL_CreateTextureFromSurface(ren, bgSurface);
+		SDL_RenderCopy(ren, bgTex, NULL, NULL);
 		SDL_FreeSurface(bgSurface);
+		SDL_RenderPresent(ren);
 	}
 
 	System::~System()
