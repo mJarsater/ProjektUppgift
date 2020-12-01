@@ -6,15 +6,12 @@
 
 namespace game
 {
-
 	Shooter::Shooter(int x, int y, int w, int h): Sprite ( x,  y,  w,  h) {
 		SDL_Surface* shooterSurf = IMG_Load("Images/shooter.png");
 		texture = SDL_CreateTextureFromSurface(sys.get_ren(), shooterSurf);
 		rect = { x, y, w, h };
 		SDL_FreeSurface(shooterSurf);
 	}
-
-
 
 	Shooter* Shooter::get_instance(int x, int y, int w, int h) {
 		return new Shooter(x, y, w, h);
