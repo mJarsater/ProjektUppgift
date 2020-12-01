@@ -32,6 +32,10 @@ namespace game
 	{
 		return ren;
 	}
+	
+	SDL_Texture* System::get_tex() const {
+		return bgTex;
+	}
 
 	System sys;
 }

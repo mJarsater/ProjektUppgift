@@ -9,6 +9,7 @@ namespace game
 	public:
 		System();
 		~System();
+		SDL_Texture* get_tex() const;
 		SDL_Renderer* get_ren() const;
 	private:
 		SDL_Window* win;

@@ -2,6 +2,7 @@
 #include "System.h"
 #include <SDL.h>
 #include <SDL_image.h>
+#include <iostream>
 
 namespace game
 {
@@ -9,7 +10,7 @@ namespace game
 	Shooter::Shooter(int x, int y, int w, int h): Sprite ( x,  y,  w,  h) {
 		SDL_Surface* shooterSurf = IMG_Load("Images/shooter.png");
 		texture = SDL_CreateTextureFromSurface(sys.get_ren(), shooterSurf);
-		SDL_Rect shooterRect = { x, y, w, h };
+		rect = { x, y, w, h };
 		SDL_FreeSurface(shooterSurf);
 	}
 
@@ -19,25 +20,37 @@ namespace game
 		return new Shooter(x, y, w, h);
 	}
 
-	void Shooter::draw()const {
-		SDL_RenderCopy(sys.get_ren(), texture, NULL, &get_rect());
+	void Shooter::draw()  {
+		SDL_RenderCopy(sys.get_ren(), texture , NULL, &rect);
 	}
 
 
-	void game::Shooter::shoot(const SDL_Event&)
+	void Shooter::shoot(const SDL_Event&)
 	{
 		// Skapa nytt Blast
 		// Skicka Blast från rätt y-kordinat
 	}
 
-	void game::Shooter::moveRight(const SDL_Event&)
+	void Shooter::moveRight(const SDL_Event&)
 	{
-		shooterRect.y++;
+		rect.x+=10;
+		std::cout << rect.x << std::endl;
+		std::cout << "Höger" << std::endl;
 	}
 
-	void game::Shooter::moveLeft(const SDL_Event&)
+	void Shooter::moveLeft(const SDL_Event&)
 	{
-		shooterRect.y--;
+		rect.x-=10;
+		std::cout << rect.x << std::endl;
+		std::cout << "Vänster" << std::endl;
+	}
+
+	SDL_Texture* Shooter::get_texture() {
+		return texture;
+	}
+
+	SDL_Rect& Shooter::get_rect() {
+		return rect;
 	}
 
 }

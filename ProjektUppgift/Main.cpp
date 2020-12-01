@@ -12,7 +12,7 @@ using namespace game;
 int main(int argc, char** argv)
 {
 	Session ses;
-	Shooter* shooter = Shooter::get_instance(100, 100, 100, 100);
+	Shooter* shooter = Shooter::get_instance(0, 0, 100, 100);
 	
 	
 	ses.add(shooter);

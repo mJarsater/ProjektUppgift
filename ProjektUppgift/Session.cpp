@@ -26,28 +26,33 @@ namespace game {
 				case SDL_QUIT:
 					quit = true;
 					break;
-				case SDLK_SPACE:
-					// Loopa över sprites
-					for (Sprite* sprite : sprites)
-						sprite->shoot(eve);
-					break;
+				case SDL_KEYDOWN:
+					switch (eve.key.keysym.sym) {
+					case SDLK_SPACE:
+						std::cout << "SPACE" << std::endl;
+						// Loopa över sprites
+						for (Sprite* sprite : sprites)
+							sprite->shoot(eve);
+						break;
 
-				case SDLK_RIGHT:
-					// Loopa över sprites
-					for (Sprite* sprite : sprites)
-						sprite->moveRight(eve);
-					break;
+					case SDLK_RIGHT:
+						// Loopa över sprites
+						for (Sprite* sprite : sprites)
+							sprite->moveRight(eve);
+						break;
 
-				case SDLK_LEFT:
-					// Loopa över sprites
-					for (Sprite* sprite : sprites)
-						sprite->moveLeft(eve);
-					break;
-				}
+					case SDLK_LEFT:
+						// Loopa över sprites
+						for (Sprite* sprite : sprites)
+							sprite->moveLeft(eve);
+						break;
+					}// Inre Switch
+				}// Yttre switch
 			} // Inre while
 
 			SDL_SetRenderDrawColor(sys.get_ren(), 255, 255, 255, 255);
 			SDL_RenderClear(sys.get_ren());
+			SDL_RenderCopy(sys.get_ren(), sys.get_tex(), NULL, NULL);
 			for (Sprite* s : sprites)
 				s->draw();
 			SDL_RenderPresent(sys.get_ren());
