@@ -15,6 +15,8 @@ namespace game
 		SDL_Renderer* ren;
 		SDL_Texture* bgTex;
 	};
+
+	extern System sys;
 }
 
 #endif

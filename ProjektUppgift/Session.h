@@ -10,7 +10,7 @@ namespace game
 	public: 
 		void run();
 		~Session();
-
+		void add(Sprite*);
 	private:
 		std::vector<Sprite* > sprites;
 	};

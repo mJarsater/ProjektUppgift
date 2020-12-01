@@ -11,6 +11,8 @@ namespace game
 		virtual void shoot(const SDL_Event&){}
 		virtual void moveRight(const SDL_Event&){}
 		virtual void moveLeft(const SDL_Event&){}
+		virtual void draw()const = 0;
+		const SDL_Rect& get_rect()const { return rect; }
 	protected:
 		Sprite(int x, int y, int w, int h);
 	private:
