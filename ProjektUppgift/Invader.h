@@ -11,8 +11,7 @@ namespace game
 
 		// Virtual om vi vill ha subklasser till invader
 		virtual void attack();
-	
-		static Invader* get_instance();
+		static Invader* get_instance(int x, int y, int w, int h);
 		
 		Invader();
 	private:
