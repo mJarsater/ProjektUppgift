@@ -20,6 +20,14 @@ namespace game {
 		SDL_RenderCopy(sys.get_ren(), texture, NULL, &rect);
 	}
 
+	void Blast::tick() {
+		if (rect.y <= -50) {
+			ses.remove(this);
+		} else {
+			rect.y-=10;
+		}
+	}
+
 	SDL_Texture* Blast::get_texture() {
 		return texture;
 	}

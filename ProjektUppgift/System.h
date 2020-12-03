@@ -12,16 +12,15 @@ namespace game
 		~System();
 		SDL_Texture* get_tex() const;
 		SDL_Renderer* get_ren() const;
-		Session get_session() const;
+		Session* get_session();
 	private:
 		SDL_Window* win;
 		SDL_Renderer* ren;
 		SDL_Texture* bgTex;
-		Session ses;
 	};
 
 	extern System sys;
-
+	extern Session ses;
 }
 
 #endif

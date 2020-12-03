@@ -18,7 +18,7 @@ namespace game
 		std::vector<Sprite* > removed;
 	};
 
-	extern Session ses;
+	//extern Session ses;
 }
 
 #endif

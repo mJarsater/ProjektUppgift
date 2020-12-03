@@ -23,23 +23,24 @@ namespace game
 	}
 
 
-	Sprite* Shooter::shoot(const SDL_Event&)
+	void Shooter::shoot(const SDL_Event&)
 	{	
-		std::cout << "SKJUTER" << std::endl;
-		// Skapa nytt Blast
-		Blast* b = Blast::get_instance(100, 250, 50, 50);
-		return b;
-		// Skicka Blast från rätt y-kordinat
+		Blast* b = Blast::get_instance(rect.x + (rect.w / 4), 600, 50, 50);
+		ses.add(b);
 	}
 
 	void Shooter::moveRight(const SDL_Event&)
 	{
-		rect.x+=10;
+		if (rect.x <= 540) {
+			rect.x += 10;
+		}
 	}
 
 	void Shooter::moveLeft(const SDL_Event&)
 	{
-		rect.x-=10;
+		if (rect.x > 0) {
+			rect.x -= 10;
+		}
 	}
 
 	SDL_Texture* Shooter::get_texture() {
@@ -49,5 +50,7 @@ namespace game
 	SDL_Rect& Shooter::get_rect() {
 		return rect;
 	}
+
+
 
 }

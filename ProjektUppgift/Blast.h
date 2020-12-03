@@ -8,9 +8,10 @@ namespace game
 	{
 	public:
 		static Blast* get_instance(int x, int y, int w, int h);
+		void draw();
+		void tick();
 		virtual SDL_Texture* get_texture();
 		virtual SDL_Rect& get_rect();
-		void draw();
 	protected:
 		Blast(int x, int y, int w, int h);
 	private:

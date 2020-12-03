@@ -9,7 +9,7 @@ namespace game
 	public:
 		static Shooter* get_instance(int x, int y, int w, int h);
 		void draw();
-		Sprite* shoot(const SDL_Event&);
+		void shoot(const SDL_Event&);
 		void moveRight(const SDL_Event&);
 		void moveLeft(const SDL_Event&);
 		virtual SDL_Texture* get_texture();
