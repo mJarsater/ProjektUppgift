@@ -8,7 +8,7 @@ namespace game
 	{
 	public:
 		virtual ~Sprite();
-		virtual void shoot(const SDL_Event&){}
+		virtual Sprite* shoot(const SDL_Event&) { return NULL; }
 		virtual void moveRight(const SDL_Event&){}
 		virtual void moveLeft(const SDL_Event&){}
 		virtual void draw() = 0;

@@ -7,12 +7,16 @@
 /* Skapa nya Invaders */
 namespace game {
 
-
 	void Session::add(Sprite* sprite) {
-		sprites.push_back(sprite);
-		std::cout << sprites.size()<< std::endl;
-		for (int i = 0; i < sprites.size(); i++)
-			std::cout << sprites.at(i) << std::endl;
+		added.push_back(sprite);
+		for (Sprite* sprite : added) {
+			std::cout << "ADD: ";
+			std::cout << sprite << std::endl;
+		}
+	}
+
+	void Session::remove(Sprite* sprite) {
+		removed.push_back(sprite);
 	}
 
 
@@ -29,12 +33,12 @@ namespace game {
 				case SDL_KEYDOWN:
 					switch (eve.key.keysym.sym) {
 					case SDLK_SPACE:
-						std::cout << "SPACE" << std::endl;
 						// Loopa över sprites
-						for (Sprite* sprite : sprites)
-							sprite->shoot(eve);
+						for (Sprite* sprite : sprites) {
+							Sprite* b = sprite->shoot(eve);
+							add(b);
+						}
 						break;
-
 					case SDLK_RIGHT:
 						// Loopa över sprites
 						for (Sprite* sprite : sprites)
@@ -50,12 +54,22 @@ namespace game {
 				}// Yttre switch
 			} // Inre while
 
+			
+			for (Sprite* c : added) {
+				std::cout << "I LOOPEN";
+				sprites.push_back(c);
+			}
+			added.clear();
+			
+
 			SDL_SetRenderDrawColor(sys.get_ren(), 255, 255, 255, 255);
 			SDL_RenderClear(sys.get_ren());
 			SDL_RenderCopy(sys.get_ren(), sys.get_tex(), NULL, NULL);
 			for (Sprite* s : sprites)
 				s->draw();
 			SDL_RenderPresent(sys.get_ren());
+
+			
 		}  // Yttre while
 		
 	}

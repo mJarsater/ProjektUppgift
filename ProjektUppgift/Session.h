@@ -11,9 +11,14 @@ namespace game
 		void run();
 		~Session();
 		void add(Sprite*);
+		void remove(Sprite*);
 	private:
 		std::vector<Sprite* > sprites;
+		std::vector<Sprite* > added;
+		std::vector<Sprite* > removed;
 	};
+
+	extern Session ses;
 }
 
 #endif

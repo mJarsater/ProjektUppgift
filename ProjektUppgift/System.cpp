@@ -37,5 +37,9 @@ namespace game
 		return bgTex;
 	}
 
+	Session System::get_session() const{
+		return ses;
+	}
+
 	System sys;
 }
