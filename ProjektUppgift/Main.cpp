@@ -13,11 +13,13 @@ using namespace game;
 
 int main(int argc, char** argv)
 {
-	//Session ses = *sys.get_session();
+
 	Shooter* shooter = Shooter::get_instance(0, 650, 100, 100);
 
 	ses.add(shooter);
+	shooter->set_lifes(3);
 	ses.run();
+
 
 	return 0;
 }

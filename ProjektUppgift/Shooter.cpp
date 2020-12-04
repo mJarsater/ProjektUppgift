@@ -77,6 +77,16 @@ namespace game
 		return rect;
 	}
 
+	void Shooter::drop_life() {
+		lifes -= 1;
+		if (lifes == 0)
+			exit(-1);
+	}
+
+	void Shooter::set_lifes(int n) {
+		lifes = n;
+	}
+
 
 
 }
