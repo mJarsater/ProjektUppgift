@@ -1,5 +1,5 @@
 #include "Sprite.h"
-
+#include <iostream>
 namespace game
 {
 
@@ -8,9 +8,8 @@ namespace game
 
 	Sprite::Sprite(){}
 
-	Sprite::~Sprite()
-	{
-		
+	Sprite::~Sprite() {
+		SDL_DestroyTexture(texture);
 	}
 
 }

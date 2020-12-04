@@ -21,7 +21,6 @@ namespace game
 	void Shooter::handleEvent(const SDL_Event& eve) {
 		switch (eve.key.keysym.sym) {
 		case SDLK_SPACE:
-			// Loopa över sprites
 			shoot(eve);
 			break;
 		case SDLK_RIGHT:
@@ -66,7 +65,7 @@ namespace game
 		points_acquired += n;
 	}
 
-	void Shooter::next_level() {
+	void Shooter::clear_points() {
 		points_acquired = 0; 
 	}
 

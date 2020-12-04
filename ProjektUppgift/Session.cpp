@@ -18,6 +18,10 @@ namespace game {
 		removed.push_back(sprite);
 	}
 
+	void Session::next_level() {
+		level -= 20;
+	}
+
 	void Session::run() {
 		bool quit = false;
 		Uint32 tickInterval = 1000 / FPS;
@@ -34,7 +38,7 @@ namespace game {
 				case SDL_KEYDOWN:
 					for (Sprite* sprite : sprites)
 						sprite->handleEvent(eve);
-				}// Yttre switch
+				}// Switch
 			} // Inre while
 
 			for (Sprite* c : added) {
@@ -96,8 +100,8 @@ namespace game {
 				if (dynamic_cast<Shooter*>(shooter)) {
 					if (shooter->get_points() >= 1000) {
 						std::cout << "NEXT LEVEL" << std::endl;
-						shooter->next_level();
-						level -= 20;
+						shooter->clear_points();
+						next_level();
 					}
 				}
 

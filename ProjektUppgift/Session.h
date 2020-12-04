@@ -12,6 +12,7 @@ namespace game
 		~Session();
 		void add(Sprite*);
 		void remove(Sprite*);
+		void next_level();
 	private:
 		std::vector<Sprite* > sprites;
 		std::vector<Sprite* > added;
