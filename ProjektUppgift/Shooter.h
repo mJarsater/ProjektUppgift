@@ -12,11 +12,15 @@ namespace game
 		void shoot(const SDL_Event&);
 		void moveRight(const SDL_Event&);
 		void moveLeft(const SDL_Event&);
+		void set_points(int);
+		int get_points();
+		void next_level();
 		virtual SDL_Texture* get_texture();
 		virtual SDL_Rect& get_rect();
 	protected:
 		Shooter(int x, int y, int w, int h);
 	private:
+		int points_acquired;
 		SDL_Texture* texture;
 		SDL_Rect rect;
 	

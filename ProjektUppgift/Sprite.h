@@ -13,6 +13,9 @@ namespace game
 		virtual void moveLeft(const SDL_Event&){}
 		virtual void draw() = 0;
 		virtual void tick() {}
+		virtual void set_points(int n) {}
+		virtual int get_points() { return NULL; }
+		virtual void next_level() {}
 		virtual SDL_Texture* get_texture() = 0;
 		virtual SDL_Rect& get_rect() = 0;
 		//bool operator==(const Sprite& other);

@@ -43,6 +43,18 @@ namespace game
 		}
 	}
 
+	int Shooter::get_points() {
+		return points_acquired;
+	}
+
+	void Shooter::set_points(int n) {
+		points_acquired += n;
+	}
+
+	void Shooter::next_level() {
+		points_acquired = 0; 
+	}
+
 	SDL_Texture* Shooter::get_texture() {
 		return texture;
 	}

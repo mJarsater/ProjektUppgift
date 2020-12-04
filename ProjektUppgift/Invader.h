@@ -13,15 +13,15 @@ namespace game
 		void attack();
 		void draw();
 		void tick();
+		void set_points(int n);
+		int get_points();
 		virtual SDL_Texture* get_texture();
 		virtual SDL_Rect& get_rect();
 	protected:
 		Invader(int x, int y, int w, int h);
 		Invader();
 	private:
-	// Poäng för 
-		int point;
-		bool isAlive = true;
+		int points = 100;
 		SDL_Texture* texture;
 		SDL_Rect rect;
 	};

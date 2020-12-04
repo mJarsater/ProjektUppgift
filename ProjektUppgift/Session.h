@@ -16,6 +16,7 @@ namespace game
 		std::vector<Sprite* > sprites;
 		std::vector<Sprite* > added;
 		std::vector<Sprite* > removed;
+		int level;
 	};
 
 	//extern Session ses;

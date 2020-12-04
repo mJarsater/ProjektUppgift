@@ -35,4 +35,5 @@ namespace game {
 	SDL_Rect& Blast::get_rect() {
 		return rect;
 	}
+
 }

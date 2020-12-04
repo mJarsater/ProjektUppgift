@@ -12,6 +12,7 @@ namespace game
 		void tick();
 		virtual SDL_Texture* get_texture();
 		virtual SDL_Rect& get_rect();
+		
 	protected:
 		Blast(int x, int y, int w, int h);
 	private:

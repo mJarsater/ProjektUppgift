@@ -43,6 +43,14 @@ namespace game {
 		}
 	}
 
+	void Invader::set_points(int n) {
+		points += n;
+	}
+
+	int Invader::get_points() {
+		return points;
+	}
+
 	SDL_Texture* Invader::get_texture() {
 		return texture;
 	}
