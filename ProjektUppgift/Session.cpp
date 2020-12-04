@@ -50,6 +50,7 @@ namespace game {
 					i != sprites.end();) {
 					if (*i == c) {
 						i = sprites.erase(i);
+						delete c;
 					}
 					else {
 						i++;

@@ -8,6 +8,9 @@ namespace game
 
 	Sprite::Sprite(){}
 
-	Sprite::~Sprite(){}
+	Sprite::~Sprite()
+	{
+		
+	}
 
 }
