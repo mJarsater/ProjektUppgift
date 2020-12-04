@@ -32,25 +32,8 @@ namespace game {
 					quit = true;
 					break;
 				case SDL_KEYDOWN:
-					switch (eve.key.keysym.sym) {
-					case SDLK_SPACE:
-						// Loopa över sprites
-						for (Sprite* sprite : sprites) {
-							sprite->shoot(eve);
-						}
-						break;
-					case SDLK_RIGHT:
-						// Loopa över sprites
-						for (Sprite* sprite : sprites)
-							sprite->moveRight(eve);
-						break;
-
-					case SDLK_LEFT:
-						// Loopa över sprites
-						for (Sprite* sprite : sprites)
-							sprite->moveLeft(eve);
-						break;
-					}// Inre Switch
+					for (Sprite* sprite : sprites)
+						sprite->handleEvent(eve);
 				}// Yttre switch
 			} // Inre while
 

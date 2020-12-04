@@ -18,6 +18,21 @@ namespace game
 		return new Shooter(x, y, w, h);
 	}
 
+	void Shooter::handleEvent(const SDL_Event& eve) {
+		switch (eve.key.keysym.sym) {
+		case SDLK_SPACE:
+			// Loopa över sprites
+			shoot(eve);
+			break;
+		case SDLK_RIGHT:
+			moveRight(eve);
+			break;
+		case SDLK_LEFT:
+			moveLeft(eve);
+			break;
+		}
+	}
+
 	void Shooter::draw()  {
 		SDL_RenderCopy(sys.get_ren(), texture , NULL, &rect);
 	}

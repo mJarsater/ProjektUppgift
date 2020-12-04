@@ -8,6 +8,7 @@ namespace game
 	{
 	public:
 		static Shooter* get_instance(int x, int y, int w, int h);
+		void handleEvent(const SDL_Event&);
 		void draw();
 		void shoot(const SDL_Event&);
 		void moveRight(const SDL_Event&);
