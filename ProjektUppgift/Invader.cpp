@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <stdlib.h>
+#include <iostream>
 
 namespace game {
 
@@ -58,6 +59,4 @@ namespace game {
 	SDL_Rect& Invader::get_rect() {
 		return rect;
 	}
-
-	
 }

@@ -15,7 +15,7 @@ namespace game
 		void moveLeft(const SDL_Event&);
 		void set_points(int);
 		int get_points();
-		void next_level();
+		void clear_points();
 		virtual SDL_Texture* get_texture();
 		virtual SDL_Rect& get_rect();
 	protected:
