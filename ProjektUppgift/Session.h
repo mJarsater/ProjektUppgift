@@ -13,6 +13,9 @@ namespace game
 		void add(Sprite*);
 		void remove(Sprite*);
 		void next_level();
+		void check_collision();
+		void check_attack();
+		std::vector<Sprite*>& get_sprites();
 	private:
 		std::vector<Sprite* > sprites;
 		std::vector<Sprite* > added;

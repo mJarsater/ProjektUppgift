@@ -11,6 +11,7 @@ namespace game
 		static Invader* get_instance(int x, int y, int w, int h);
 		static Invader* get_instance();
 		void attack();
+		void take_life();
 		void draw();
 		void tick();
 		void set_points(int n);

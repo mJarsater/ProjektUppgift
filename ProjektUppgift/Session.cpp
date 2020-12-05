@@ -4,12 +4,15 @@
 #include "Session.h"
 #include "System.h"
 #include "Shooter.h"
-#include "Label.h"
 #include <iostream>
 #define FPS 60
 /* SDL - Loop */
 /* Skapa nya Invaders */
 namespace game {
+
+	std::vector<Sprite*>& Session::get_sprites() {
+		return sprites;
+	}
 
 	void Session::add(Sprite* sprite) {
 		added.push_back(sprite);
@@ -23,9 +26,44 @@ namespace game {
 		level -= 20;
 	}
 
+	void Session::check_collision() {
+		for (Sprite* blast : sprites) {
+			if (dynamic_cast<Blast*>(blast)) {
+				for (Sprite* invader : sprites) {
+					if (dynamic_cast<Invader*>(invader)) {
+						if ((blast->get_rect().y <= invader->get_rect().y + (invader->get_rect().h) / 2) &&
+							(blast->get_rect().x >= invader->get_rect().x &&
+								blast->get_rect().x < invader->get_rect().x + (invader->get_rect().w) / 2)) {
+							remove(blast);
+							remove(invader);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	void Session::check_attack() {
+		for (Sprite* shooter : sprites) {
+			if (dynamic_cast<Shooter*>(shooter)) {
+				for (Sprite* invader : sprites) {
+					if (dynamic_cast<Invader*>(invader)) {
+						if (invader->get_rect().y == shooter->get_rect().y + (shooter->get_rect().w / 2) &&
+							(invader->get_rect().x >= shooter->get_rect().x &&
+								invader->get_rect().x < shooter->get_rect().x + (invader->get_rect().w) / 2)) {
+							shooter->drop_life();
+							std::cout << "HIT BY ALIEN" << std::endl;
+							remove(invader);
+						}
+					}
+				}
+			}
+		}
+	}
+
 	void Session::run() {
 		bool quit = false;
-		Uint32 tickInterval = 1000 / FPS;
+		Uint32 tickInterval = 500 / FPS;
 		int counter = 0;
 		level = 200;
 		while (!quit) {
@@ -39,8 +77,8 @@ namespace game {
 				case SDL_KEYDOWN:
 					for (Sprite* sprite : sprites)
 						sprite->handleEvent(eve);
-				}// Switch
-			} // Inre while
+				}
+			} 
 
 			for (Sprite* c : added) {
 				sprites.push_back(c);
@@ -66,30 +104,8 @@ namespace game {
 			added.clear();
 			removed.clear();
 
-			for (Sprite* blast : sprites) {
-				if (dynamic_cast<Blast*>(blast)) {
-					for (Sprite* invader : sprites) {
-						if (dynamic_cast<Invader*>(invader)) {
-							if ((blast->get_rect().y <= invader->get_rect().y + (invader->get_rect().h) / 2) &&
-								(blast->get_rect().x >= invader->get_rect().x &&
-									blast->get_rect().x < invader->get_rect().x + (invader->get_rect().w) / 2)) {
-								for (Sprite* shooter : sprites)
-									if (dynamic_cast<Shooter*>(shooter)) {
-										std::cout << "Invader:" << invader->get_points() << std::endl;
-										shooter->set_points(invader->get_points());
-										for (Sprite* label : sprites)
-											if (dynamic_cast<Label*>(label)) {
-												label->set_text(shooter->get_points());
-											}
-										std::cout << "Shooter:" << shooter->get_points() << std::endl;
-									}
-								remove(blast);
-								remove(invader);
-							}
-						}
-					}
-				}
-			}
+			check_collision();
+			check_attack();
 
 			SDL_SetRenderDrawColor(sys.get_ren(), 255, 255, 255, 255);
 			SDL_RenderClear(sys.get_ren());

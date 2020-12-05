@@ -1,5 +1,6 @@
 #include "Invader.h"
 #include "System.h"
+#include "Shooter.h"
 #include <SDL.h>
 #include <SDL_image.h>
 #include <stdlib.h>
@@ -38,10 +39,19 @@ namespace game {
 	void Invader::tick() {
 		if (rect.y >= 800) {
 			ses.remove(this);
+			take_life();
 		}
 		else {
 			rect.y++;
 		}
+	}
+
+	void Invader::take_life() {
+		for (Sprite* shooter : ses.get_sprites())
+			if (dynamic_cast<Shooter*>(shooter)){
+				shooter->drop_life();
+				std::cout << "ALIEN PASSED" << std::endl;
+			}
 	}
 
 	void Invader::set_points(int n) {
