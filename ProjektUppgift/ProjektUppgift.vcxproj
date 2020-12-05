@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="Blast.cpp" />
     <ClCompile Include="Invader.cpp" />
+    <ClCompile Include="Label.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Session.cpp" />
     <ClCompile Include="Shooter.cpp" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="Blast.h" />
     <ClInclude Include="Invader.h" />
+    <ClInclude Include="Label.h" />
     <ClInclude Include="Shooter.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Session.h" />

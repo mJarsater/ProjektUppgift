@@ -2,6 +2,7 @@
 #include "System.h"
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <iostream>
 
 namespace game
@@ -17,11 +18,14 @@ namespace game
 		SDL_RenderCopy(ren, bgTex, NULL, NULL);
 		SDL_FreeSurface(bgSurface);
 		SDL_RenderPresent(ren);
-		
+		TTF_Init();
+		font = TTF_OpenFont("c:/Windows/Fonts/arial.ttf", 36);
 	}
 
 	System::~System()
 	{
+		TTF_CloseFont(font);
+		TTF_Quit();
 		SDL_DestroyTexture(bgTex);
 		SDL_DestroyWindow(win);
 		SDL_DestroyRenderer(ren);
@@ -31,10 +35,16 @@ namespace game
 	SDL_Renderer* System::get_ren() const {
 		return ren;
 	}
+
+	TTF_Font* System::get_font() const
+	{
+		return font;
+	}
 	
 	SDL_Texture* System::get_tex() const {
 		return bgTex;
 	}
+
 
 	Session ses;
 	System sys;

@@ -4,6 +4,7 @@
 #include "Session.h"
 #include "System.h"
 #include "Shooter.h"
+#include "Label.h"
 #include <iostream>
 #define FPS 60
 /* SDL - Loop */
@@ -76,6 +77,10 @@ namespace game {
 									if (dynamic_cast<Shooter*>(shooter)) {
 										std::cout << "Invader:" << invader->get_points() << std::endl;
 										shooter->set_points(invader->get_points());
+										for (Sprite* label : sprites)
+											if (dynamic_cast<Label*>(label)) {
+												label->set_text(shooter->get_points());
+											}
 										std::cout << "Shooter:" << shooter->get_points() << std::endl;
 									}
 								remove(blast);
