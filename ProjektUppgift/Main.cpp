@@ -19,6 +19,7 @@ int main(int argc, char** argv)
 	Label* label = Label::get_instance(350, 720, 100, 50, "Points: " + shooter->get_points());
 	ses.add(label);
 	ses.add(shooter);
+	shooter->set_lifes(3);
 	ses.run();
 
 

@@ -5,6 +5,7 @@
 #include "System.h"
 #include "Shooter.h"
 #include <iostream>
+#include "Label.h"
 #define FPS 60
 /* SDL - Loop */
 /* Skapa nya Invaders */
@@ -34,6 +35,14 @@ namespace game {
 						if ((blast->get_rect().y <= invader->get_rect().y + (invader->get_rect().h) / 2) &&
 							(blast->get_rect().x >= invader->get_rect().x &&
 								blast->get_rect().x < invader->get_rect().x + (invader->get_rect().w) / 2)) {
+							for (Sprite* shooter : sprites)
+								if (dynamic_cast<Shooter*>(shooter)) {
+									shooter->set_points(invader->get_points());
+									for (Sprite* label : sprites)
+										if (dynamic_cast<Label*>(label)) {
+											label->set_text(shooter->get_points());
+										}
+								}
 							remove(blast);
 							remove(invader);
 						}
@@ -78,7 +87,7 @@ namespace game {
 					for (Sprite* sprite : sprites)
 						sprite->handleEvent(eve);
 				}
-			} 
+			}
 
 			for (Sprite* c : added) {
 				sprites.push_back(c);
@@ -131,6 +140,8 @@ namespace game {
 			if (delay > 0) {
 				SDL_Delay(delay);
 			}
+
+
 
 			if (level != 0) {
 				if (counter % level == 0) {
