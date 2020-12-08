@@ -10,11 +10,6 @@ namespace game {
 		return tickNumber;
 	}
 
-	void LevelHandler::next_level() {
-		level++;
-		sys.set_background("Images/bg_level2.jpg");
-	}
-
 	void LevelHandler::set_tickNumber(int n) {
 		tickNumber = n;
 	}
@@ -25,10 +20,30 @@ namespace game {
 			sys.set_background("Images/bg.jpg");
 			break;
 		case 2:
-			sys.set_background("Images/bg_level2.jpg");
+			sys.set_background("Images/bg2.jpg");
+			break;
+		case 3:
+			sys.set_background("Images/bg3.jpg");
+			break;
+		case 4:
+			sys.set_background("Images/bg4.jpg");
+			break;
+		case 5:
+			sys.set_background("Images/bg5.jpg");
+			break;
+		case 6:
+			sys.set_background("Images/bg6.jpg");
 			break;
 		}
 	}
 
-	LevelHandler::LevelHandler(int level, int tickNumber) : level(level), tickNumber(tickNumber) {}
+	void LevelHandler::inc_level() {
+		level++;
+	}
+
+	void LevelHandler::inc_tickNumber() {
+		tickNumber -= 30;
+	}
+
+	LevelHandler::LevelHandler() : level(1), tickNumber(400) {}
 }

@@ -26,8 +26,19 @@ namespace game {
 	}
 
 	void Session::next_level() {
-		levelHandler.set_tickNumber(200);
+		levelHandler.inc_level();
 		levelHandler.handleLevel();
+		levelHandler.inc_tickNumber();
+		for(Sprite* shooter: sprites)
+			if (dynamic_cast<Shooter*>(shooter)) {
+				shooter->clear_points();
+				for (Sprite* label : sprites) {
+					if (dynamic_cast<PointsLabel*>(label))
+						label->set_text(shooter->get_points());
+					if (dynamic_cast<LevelLabel*>(label))
+						label->set_text(levelHandler.get_level());
+				}
+			}
 	}
 
 	void Session::check_collision() {
@@ -66,7 +77,6 @@ namespace game {
 							(invader->get_rect().x >= shooter->get_rect().x &&
 								invader->get_rect().x < shooter->get_rect().x + (invader->get_rect().w) / 2)) {
 							shooter->drop_life();
-							std::cout << "HIT BY ALIEN" << std::endl;
 							remove(invader);
 						}
 					}
@@ -132,9 +142,7 @@ namespace game {
 
 			for (Sprite* shooter : sprites)
 				if (dynamic_cast<Shooter*>(shooter)) {
-					if (shooter->get_points() >= 1000) {
-						std::cout << "NEXT LEVEL" << std::endl;
-						shooter->clear_points();
+					if (shooter->get_points() == 1000) {
 						next_level();
 					}
 				}

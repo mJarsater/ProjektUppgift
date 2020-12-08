@@ -23,7 +23,7 @@ namespace game
 	}
 
 	void System::set_background(std::string path) {
-		SDL_Surface* bgSurface = IMG_Load("Images/bg_level2.jpg");
+		SDL_Surface* bgSurface = IMG_Load(path.c_str());
 		bgTex = SDL_CreateTextureFromSurface(ren, bgSurface);
 		SDL_UpdateWindowSurface(win);
 	}
@@ -54,6 +54,6 @@ namespace game
 
 	Session ses;
 	System sys;
-	LevelHandler levelHandler(1, 200);
+	LevelHandler levelHandler;
 
 }

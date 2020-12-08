@@ -6,12 +6,13 @@ namespace game {
 	class LevelHandler
 	{
 	public:
-		LevelHandler(int, int);
+		LevelHandler();
 		void set_tickNumber(int n);
 		int& get_level();
 		int& get_tickNumber();
-		void next_level();
 		void handleLevel();
+		void inc_level();
+		void inc_tickNumber();
 		~LevelHandler(){}
 	private:
 		int level;
