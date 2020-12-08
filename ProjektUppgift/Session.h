@@ -2,6 +2,7 @@
 #define SESSION_H
 #include <vector>
 #include "Sprite.h"
+#include "LevelHandler.h"
 
 namespace game
 {
@@ -20,9 +21,8 @@ namespace game
 		std::vector<Sprite* > sprites;
 		std::vector<Sprite* > added;
 		std::vector<Sprite* > removed;
-		int level;
 	};
-
+	
 	//extern Session ses;
 }
 

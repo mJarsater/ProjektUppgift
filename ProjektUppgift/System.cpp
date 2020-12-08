@@ -22,6 +22,12 @@ namespace game
 		font = TTF_OpenFont("c:/Windows/Fonts/arial.ttf", 36);
 	}
 
+	void System::set_background(std::string path) {
+		SDL_Surface* bgSurface = IMG_Load("Images/bg_level2.jpg");
+		bgTex = SDL_CreateTextureFromSurface(ren, bgSurface);
+		SDL_UpdateWindowSurface(win);
+	}
+
 	System::~System()
 	{
 		TTF_CloseFont(font);
@@ -48,5 +54,6 @@ namespace game
 
 	Session ses;
 	System sys;
+	LevelHandler levelHandler(1, 200);
 
 }

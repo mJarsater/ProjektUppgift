@@ -6,6 +6,8 @@
 #include "Shooter.h"
 #include <iostream>
 #include "Label.h"
+#include "PointsLabel.h"
+#include "LevelLabel.h"
 #define FPS 60
 /* SDL - Loop */
 /* Skapa nya Invaders */
@@ -24,7 +26,8 @@ namespace game {
 	}
 
 	void Session::next_level() {
-		level -= 20;
+		levelHandler.set_tickNumber(200);
+		levelHandler.handleLevel();
 	}
 
 	void Session::check_collision() {
@@ -38,10 +41,12 @@ namespace game {
 							for (Sprite* shooter : sprites)
 								if (dynamic_cast<Shooter*>(shooter)) {
 									shooter->set_points(invader->get_points());
-									for (Sprite* label : sprites)
-										if (dynamic_cast<Label*>(label)) {
+									for (Sprite* label : sprites) {
+										if (dynamic_cast<PointsLabel*>(label))
 											label->set_text(shooter->get_points());
-										}
+										if (dynamic_cast<LevelLabel*>(label))
+											label->set_text(levelHandler.get_level());
+									}
 								}
 							remove(blast);
 							remove(invader);
@@ -74,7 +79,6 @@ namespace game {
 		bool quit = false;
 		Uint32 tickInterval = 500 / FPS;
 		int counter = 0;
-		level = 200;
 		while (!quit) {
 			Uint32 nextTick = SDL_GetTicks() + tickInterval;
 			SDL_Event eve;
@@ -143,8 +147,8 @@ namespace game {
 
 
 
-			if (level != 0) {
-				if (counter % level == 0) {
+			if (levelHandler.get_level() != 0) {
+				if (counter % levelHandler.get_tickNumber() == 0) {
 					Invader* invader = Invader::get_instance();
 					ses.add(invader);
 				}

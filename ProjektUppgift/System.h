@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include "Session.h"
+#include "LevelHandler.h"
 
 namespace game
 {
@@ -11,6 +12,7 @@ namespace game
 	public:
 		System();
 		~System();
+		void set_background(std::string);
 		SDL_Texture* get_tex() const;
 		SDL_Renderer* get_ren() const;
 		TTF_Font* get_font() const;
@@ -24,6 +26,7 @@ namespace game
 
 	extern System sys;
 	extern Session ses;
+	extern LevelHandler levelHandler;
 }
 
 #endif

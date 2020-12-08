@@ -10,10 +10,11 @@ namespace game {
 
 		static Label* get_instance(int x, int y, int w, int h, std::string txt);
 		void draw();
-		void set_text(int);
+		virtual void set_text(int) {}
 		~Label();
 	protected:
 		Label(int x, int y, int w, int h, std::string txt);
+		Label(int x, int y, int w, int h);
 	public:
 		std::string text;
 		SDL_Texture* texture;
