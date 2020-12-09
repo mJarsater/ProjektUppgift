@@ -15,7 +15,7 @@ namespace game {
 		void decr_tickNumber();
 		~LevelHandler(){}
 	private:
-		int level;
+		int level = 1;
 		int tickNumber;
 	};
 
