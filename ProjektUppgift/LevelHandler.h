@@ -12,7 +12,7 @@ namespace game {
 		int& get_tickNumber();
 		void handleLevel();
 		void inc_level();
-		void inc_tickNumber();
+		void decr_tickNumber();
 		~LevelHandler(){}
 	private:
 		int level;

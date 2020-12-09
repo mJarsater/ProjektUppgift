@@ -28,7 +28,7 @@ namespace game {
 	void Session::next_level() {
 		levelHandler.inc_level();
 		levelHandler.handleLevel();
-		levelHandler.inc_tickNumber();
+		levelHandler.decr_tickNumber();
 		for(Sprite* shooter: sprites)
 			if (dynamic_cast<Shooter*>(shooter)) {
 				shooter->clear_points();

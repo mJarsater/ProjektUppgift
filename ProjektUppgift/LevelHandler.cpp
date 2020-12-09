@@ -41,8 +41,8 @@ namespace game {
 		level++;
 	}
 
-	void LevelHandler::inc_tickNumber() {
-		tickNumber -= 30;
+	void LevelHandler::decr_tickNumber() {
+		tickNumber -= 40;
 	}
 
 	LevelHandler::LevelHandler() : level(1), tickNumber(400) {}

@@ -18,7 +18,7 @@ namespace game {
 	Invader::Invader(){
 		SDL_Surface* invaderSurf = IMG_Load("Images/invader.png");
 		texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
-		int x = std::rand() % 580 - 40;
+		int x = std::rand() % 590 + 10;
 		rect = { x, -100, 100, 100 };
 		SDL_FreeSurface(invaderSurf);
 	}

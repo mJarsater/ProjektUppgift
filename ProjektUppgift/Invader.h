@@ -10,7 +10,6 @@ namespace game
 	public: 	
 		static Invader* get_instance(int x, int y, int w, int h);
 		static Invader* get_instance();
-		void attack();
 		void take_life();
 		void draw();
 		void tick();
