@@ -8,8 +8,7 @@ namespace game
 	class Invader : public Sprite
 	{
 	public: 	
-		static Invader* get_instance(int x, int y, int w, int h);
-		static Invader* get_instance();
+		static Invader* get_instance(std::string);
 		void take_life();
 		void draw();
 		void tick();
@@ -18,8 +17,7 @@ namespace game
 		virtual SDL_Texture* get_texture();
 		virtual SDL_Rect& get_rect();
 	protected:
-		Invader(int x, int y, int w, int h);
-		Invader();
+		Invader(std::string);
 	private:
 		int points = 100;
 		SDL_Texture* texture;

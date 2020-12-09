@@ -12,6 +12,7 @@ namespace game {
 		int& get_tickNumber();
 		void handleLevel();
 		void inc_level();
+		void spawn_invader();
 		void decr_tickNumber();
 		~LevelHandler(){}
 	private:

@@ -157,12 +157,12 @@ namespace game {
 
 			if (levelHandler.get_level() != 0) {
 				if (counter % levelHandler.get_tickNumber() == 0) {
-					Invader* invader = Invader::get_instance();
-					ses.add(invader);
+					levelHandler.spawn_invader();
 				}
 			}
 			else {
 				exit(-1);
+				
 			}
 
 			counter++;

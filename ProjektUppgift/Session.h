@@ -13,6 +13,7 @@ namespace game
 		~Session();
 		void add(Sprite*);
 		void remove(Sprite*);
+		void delete_all();
 		void next_level();
 		void check_collision();
 		void check_attack();

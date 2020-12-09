@@ -1,5 +1,6 @@
 #include "LevelHandler.h"
 #include "System.h"
+#include "Invader.h"
 
 namespace game {
 	int& LevelHandler::get_level() {
@@ -12,6 +13,40 @@ namespace game {
 
 	void LevelHandler::set_tickNumber(int n) {
 		tickNumber = n;
+	}
+
+	void LevelHandler::spawn_invader() {
+		switch (level) {
+		case 1: {
+			Invader* invader = Invader::get_instance("Images/invader.png");
+			ses.add(invader);
+			break;
+		}
+		case 2: {
+			Invader* invader = Invader::get_instance("Images/invader2.png");
+			ses.add(invader);
+			break;
+		}
+		case 3: {
+			Invader* invader = Invader::get_instance("Images/invader3.png");
+			ses.add(invader);
+			break;
+		}
+		case 4: {
+			Invader* invader = Invader::get_instance("Images/invader4.png");
+			ses.add(invader);
+			break;
+		}
+		case 5: {
+			Invader* invader = Invader::get_instance("Images/invader5.png");
+			ses.add(invader);
+			break;
+		}
+		default:
+			Invader* invader = Invader::get_instance("Images/invader.png");
+			ses.add(invader);
+			break;
+		}
 	}
 
 	void LevelHandler::handleLevel() {

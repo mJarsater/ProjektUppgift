@@ -8,74 +8,18 @@
 
 namespace game {
 
-	Invader::Invader(int x, int y, int w, int h) : Sprite(x, y, w, h) {
-		SDL_Surface* invaderSurf = IMG_Load("Images/invader.png");
+
+	Invader::Invader(std::string path){
+		SDL_Surface* invaderSurf = IMG_Load(path.c_str());
 		texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
-		rect = { x, y, w, h };
+		int x = std::rand() % 590 + 10;
+		rect = { x, -100, 100, 100 };
 		SDL_FreeSurface(invaderSurf);
 	}
 
-	Invader::Invader(){
-		int level = levelHandler.get_level();
-		switch (level)
-		{
-		case 1:{
-			SDL_Surface * invaderSurf = IMG_Load("Images/invader.png");
-			texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
-			int x = std::rand() % 590 + 10;
-			rect = { x, -100, 100, 100 };
-			SDL_FreeSurface(invaderSurf);
-			break;
-		}
-		case 2:{
-			SDL_Surface * invaderSurf = IMG_Load("Images/invader2.png");
-			texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
-			int x = std::rand() % 590 + 10;
-			rect = { x, -100, 100, 100 };
-			SDL_FreeSurface(invaderSurf);
-			break;
-		}
-		case 3: {
-			SDL_Surface* invaderSurf = IMG_Load("Images/invader3.png");
-			texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
-			int x = std::rand() % 590 + 10;
-			rect = { x, -100, 100, 100 };
-			SDL_FreeSurface(invaderSurf);
-			break;
-		}
-		case 4: {
-			SDL_Surface* invaderSurf = IMG_Load("Images/invader4.png");
-			texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
-			int x = std::rand() % 590 + 10;
-			rect = { x, -100, 100, 100 };
-			SDL_FreeSurface(invaderSurf);
-			break;
-		}
-		case 5: {
-			SDL_Surface* invaderSurf = IMG_Load("Images/invader5.png");
-			texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
-			int x = std::rand() % 590 + 10;
-			rect = { x, -100, 100, 100 };
-			SDL_FreeSurface(invaderSurf);
-			break;
-		}
-		default:
-			SDL_Surface* invaderSurf = IMG_Load("Images/invader5.png");
-			texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
-			int x = std::rand() % 590 + 10;
-			rect = { x, -100, 100, 100 };
-			SDL_FreeSurface(invaderSurf);
-			break;
-		}
-	}
-
-	Invader* Invader::get_instance(int x, int y, int w, int h) {
-		return new Invader(x, y, w, h);
-	}
-
-	Invader* Invader::get_instance()
+	Invader* Invader::get_instance(std::string path)
 	{
-		return new Invader();
+		return new Invader(path);
 	}
 
 	void Invader::draw() {
