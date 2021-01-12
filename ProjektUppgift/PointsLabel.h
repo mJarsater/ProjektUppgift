@@ -1,8 +1,13 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef POINTSLABEL_H
 #define POINTSLABEL_H
 #include "Label.h"
 
 namespace game {
+
 	class PointsLabel : public Label
 	{
 	public:

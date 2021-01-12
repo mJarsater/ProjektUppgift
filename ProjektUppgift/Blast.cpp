@@ -1,3 +1,7 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #include "Blast.h"
 #include "System.h"
 #include <SDL.h>

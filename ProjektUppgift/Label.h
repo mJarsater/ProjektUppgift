@@ -1,11 +1,15 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef LABEL_H
 #define LABEL_H
 #include <string>
 #include "Sprite.h"
 
 namespace game {
-	class Label : public Sprite
-	{
+
+	class Label : public Sprite {
 	public:
 
 		static Label* get_instance(int x, int y, int w, int h, std::string txt);

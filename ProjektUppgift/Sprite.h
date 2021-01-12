@@ -1,11 +1,14 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef SPRITE_H
 #define SPRITE_H
 #include <SDL.h>
 #include <string>
-namespace game
-{
-	class Sprite
-	{
+namespace game {
+
+	class Sprite {
 	public:
 		virtual ~Sprite();
 		virtual void drop_life(){}

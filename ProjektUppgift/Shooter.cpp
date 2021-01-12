@@ -1,3 +1,7 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #include "Shooter.h"
 #include "System.h"
 #include "Blast.h"
@@ -5,8 +9,8 @@
 #include <SDL_image.h>
 #include <iostream>
 
-namespace game
-{
+namespace game {
+
 	Shooter::Shooter(int x, int y, int w, int h): Sprite ( x,  y,  w,  h) {
 		SDL_Surface* shooterSurf = IMG_Load("Images/greenshooter.png");
 		texture = SDL_CreateTextureFromSurface(sys.get_ren(), shooterSurf);

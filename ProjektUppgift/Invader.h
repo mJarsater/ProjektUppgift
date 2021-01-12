@@ -1,12 +1,15 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef INVADER_H
 #define INVADER_H
 #include "Sprite.h"
 #include <SDL.h>
 
-namespace game
-{
-	class Invader : public Sprite
-	{
+namespace game {
+
+	class Invader : public Sprite {
 	public: 	
 		static Invader* get_instance(std::string);
 		void take_life();

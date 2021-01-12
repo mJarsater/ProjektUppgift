@@ -1,3 +1,7 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #include "Label.h"
 #include "System.h"
 #include "Sprite.h"
@@ -7,7 +11,6 @@
 
 
 namespace game {
-
 
 	Label::Label(int x, int y, int w, int h): Sprite(x,y,w,h) {
 
@@ -29,8 +32,7 @@ namespace game {
 
 	
 
-	Label::~Label()
-	{
+	Label::~Label() {
 		SDL_DestroyTexture(texture);
 
 	}

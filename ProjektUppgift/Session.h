@@ -1,13 +1,16 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef SESSION_H
 #define SESSION_H
 #include <vector>
 #include "Sprite.h"
 #include "LevelHandler.h"
 
-namespace game
-{
-	class Session
-	{
+namespace game {
+
+	class Session {
 	public: 
 		void run();
 		~Session();

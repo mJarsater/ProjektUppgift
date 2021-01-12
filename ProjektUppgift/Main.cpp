@@ -1,3 +1,7 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 // Uppbyggnad av "spelet"
 #include <iostream>
 #include <SDL.h>
@@ -11,9 +15,7 @@
 using namespace std;
 using namespace game;
 
-
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
 	//Session ses = *sys.get_session();
 	Shooter* shooter = Shooter::get_instance(0, 650, 100, 100);
 	LevelLabel* levelLabel = LevelLabel::get_instance(100,720,100,50, "Level: " + levelHandler.get_level());
@@ -22,11 +24,8 @@ int main(int argc, char** argv)
 	ses.add(levelLabel);
 	ses.add(shooter);
 	shooter->set_lifes(3);
-
 	
 	ses.run();
-
-
 
 	return 0;
 }

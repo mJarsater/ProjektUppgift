@@ -1,3 +1,7 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #include "LevelLabel.h"
 #include "System.h"
 #include <SDL_ttf.h>

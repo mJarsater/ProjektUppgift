@@ -1,3 +1,7 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #include <SDL.h>
 #include "Blast.h"
 #include "Invader.h"
@@ -9,8 +13,10 @@
 #include "PointsLabel.h"
 #include "LevelLabel.h"
 #define FPS 60
+
 /* SDL - Loop */
 /* Skapa nya Invaders */
+
 namespace game {
 
 	std::vector<Sprite*>& Session::get_sprites() {

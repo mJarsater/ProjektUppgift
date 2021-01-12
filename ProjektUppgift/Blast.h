@@ -1,11 +1,14 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef BLAST_H
 #define BLAST_H
 #include "Sprite.h"
 
-namespace game
-{
-	class Blast : public Sprite
-	{
+namespace game {
+
+	class Blast : public Sprite {
 	public:
 		static Blast* get_instance(int x, int y, int w, int h);
 		void draw();

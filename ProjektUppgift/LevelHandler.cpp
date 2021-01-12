@@ -1,8 +1,13 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #include "LevelHandler.h"
 #include "System.h"
 #include "Invader.h"
 
 namespace game {
+
 	int& LevelHandler::get_level() {
 		return level;
 	}

@@ -1,8 +1,13 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef LEVELLABEL_H
 #define LEVELLABEL_H
 #include "Label.h"
 
 namespace game {
+
 	class LevelLabel : public Label
 	{
 	public:

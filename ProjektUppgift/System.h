@@ -1,3 +1,7 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef SYSTEM_H
 #define SYSTEM_H
 #include <SDL.h>
@@ -5,10 +9,9 @@
 #include "Session.h"
 #include "LevelHandler.h"
 
-namespace game
-{
-	class System
-	{
+namespace game {
+
+	class System {
 	public:
 		System();
 		~System();

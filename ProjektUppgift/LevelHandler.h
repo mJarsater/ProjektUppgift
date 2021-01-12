@@ -1,10 +1,13 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef LEVELHANDLER_H
 #define LEVELHANDLER_H
 
 namespace game {
 
-	class LevelHandler
-	{
+	class LevelHandler {
 	public:
 		LevelHandler();
 		void set_tickNumber(int n);

@@ -1,3 +1,7 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #include "Session.h"
 #include "System.h"
 #include <SDL.h>
@@ -5,10 +9,9 @@
 #include <SDL_ttf.h>
 #include <iostream>
 
-namespace game
-{
-	System::System()
-	{
+namespace game {
+
+	System::System() {
 		SDL_Init(SDL_INIT_EVERYTHING);
 		win = SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED,
 			SDL_WINDOWPOS_CENTERED, 650, 800, 0);

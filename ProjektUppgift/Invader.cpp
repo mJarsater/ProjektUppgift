@@ -1,3 +1,7 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #include "Invader.h"
 #include "System.h"
 #include "Shooter.h"
@@ -8,7 +12,6 @@
 
 namespace game {
 
-
 	Invader::Invader(std::string path){
 		SDL_Surface* invaderSurf = IMG_Load(path.c_str());
 		texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
@@ -17,8 +20,7 @@ namespace game {
 		SDL_FreeSurface(invaderSurf);
 	}
 
-	Invader* Invader::get_instance(std::string path)
-	{
+	Invader* Invader::get_instance(std::string path) {
 		return new Invader(path);
 	}
 

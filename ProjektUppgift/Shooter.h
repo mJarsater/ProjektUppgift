@@ -1,11 +1,14 @@
+//Elias Klinth
+//Martin Jarsäter
+//grupp 70
+
 #ifndef SHOOTER_H
 #define SHOOTER_H
 #include "Sprite.h"
 
-namespace game
-{
-	class Shooter : public Sprite
-	{
+namespace game {
+
+	class Shooter : public Sprite {
 	public:
 		static Shooter* get_instance(int x, int y, int w, int h);
 		void handleEvent(const SDL_Event&);
