@@ -91,6 +91,4 @@ namespace game {
 		lifes = n;
 	}
 
-
-
 }

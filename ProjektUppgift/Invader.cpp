@@ -12,7 +12,7 @@
 
 namespace game {
 
-	Invader::Invader(std::string path){
+	Invader::Invader(std::string path) {
 		SDL_Surface* invaderSurf = IMG_Load(path.c_str());
 		texture = SDL_CreateTextureFromSurface(sys.get_ren(), invaderSurf);
 		int x = std::rand() % 590 + 10;

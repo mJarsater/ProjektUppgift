@@ -86,4 +86,5 @@ namespace game {
 	}
 
 	LevelHandler::LevelHandler() : level(1), tickNumber(400) {}
+
 }

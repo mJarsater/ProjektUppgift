@@ -31,8 +31,7 @@ namespace game {
 		SDL_UpdateWindowSurface(win);
 	}
 
-	System::~System()
-	{
+	System::~System() {
 		TTF_CloseFont(font);
 		TTF_Quit();
 		SDL_DestroyTexture(bgTex);
@@ -45,15 +44,13 @@ namespace game {
 		return ren;
 	}
 
-	TTF_Font* System::get_font() const
-	{
+	TTF_Font* System::get_font() const {
 		return font;
 	}
 	
 	SDL_Texture* System::get_tex() const {
 		return bgTex;
 	}
-
 
 	Session ses;
 	System sys;

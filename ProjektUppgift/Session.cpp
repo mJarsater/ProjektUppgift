@@ -177,7 +177,6 @@ namespace game {
 
 	}
 
-	Session::~Session()
-	{
-	}
+	Session::~Session() {}
+
 }

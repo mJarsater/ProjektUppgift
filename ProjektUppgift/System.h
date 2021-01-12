@@ -30,6 +30,7 @@ namespace game {
 	extern System sys;
 	extern Session ses;
 	extern LevelHandler levelHandler;
+
 }
 
 #endif

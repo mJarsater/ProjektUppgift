@@ -8,8 +8,7 @@
 
 namespace game {
 
-	class LevelLabel : public Label
-	{
+	class LevelLabel : public Label {
 	public:
 		static LevelLabel* get_instance(int x, int y, int w, int h, std::string txt);
 		void set_text(int);
@@ -18,6 +17,7 @@ namespace game {
 	private:
 		std::string text;
 	};
+
 }
 #endif
 

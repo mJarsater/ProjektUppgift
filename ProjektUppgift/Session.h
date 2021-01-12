@@ -26,8 +26,7 @@ namespace game {
 		std::vector<Sprite* > added;
 		std::vector<Sprite* > removed;
 	};
-	
-	//extern Session ses;
+
 }
 
 #endif

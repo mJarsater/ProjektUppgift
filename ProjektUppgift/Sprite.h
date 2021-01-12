@@ -6,6 +6,7 @@
 #define SPRITE_H
 #include <SDL.h>
 #include <string>
+
 namespace game {
 
 	class Sprite {

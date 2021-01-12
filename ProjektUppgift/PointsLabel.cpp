@@ -27,4 +27,5 @@ namespace game {
 		SDL_FreeSurface(surf);
 		draw();
 	}
+
 }

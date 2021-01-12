@@ -12,9 +12,7 @@
 
 namespace game {
 
-	Label::Label(int x, int y, int w, int h): Sprite(x,y,w,h) {
-
-	}
+	Label::Label(int x, int y, int w, int h): Sprite(x,y,w,h) {}
 
 	Label::Label(int x, int y, int w, int h, std::string text) : Sprite(x,y,w,h), text(text) {
 		SDL_Surface* txtSurf = TTF_RenderText_Solid(sys.get_font(), text.c_str(), { 255, 255, 255 });
@@ -29,8 +27,6 @@ namespace game {
 	void Label::draw() {
 		SDL_RenderCopy(sys.get_ren(), texture, NULL, &get_rect());
 	}
-
-	
 
 	Label::~Label() {
 		SDL_DestroyTexture(texture);
